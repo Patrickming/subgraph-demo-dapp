@@ -1,8 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity =0.8.10;
+pragma solidity ^0.8.10;
 
 contract GravatarRegistry {
+  //两个事件
+  // createGravatar emit
   event NewGravatar(uint id, address owner, string displayName, string imageUrl);
+  // updateGravatarName、updateGravatarImage  emit
   event UpdatedGravatar(uint id, address owner, string displayName, string imageUrl);
 
   struct Gravatar {
@@ -17,9 +20,11 @@ contract GravatarRegistry {
   mapping (address => uint) public ownerToGravatar;
 
   function createGravatar(string memory _displayName, string memory _imageUrl) public {
-    require(ownerToGravatar[msg.sender] == 0);
+     //每账户只能有一个
+    require(ownerToGravatar[msg.sender] == 0);   
     gravatars.push(Gravatar(msg.sender, _displayName, _imageUrl));
-    uint id = gravatars.length;
+    //id其实就是长度 从0开始 方便我们从gravatars拿取Gravatar
+    uint id = gravatars.length; 
     ownerToGravatar[msg.sender] = id;
 
     gravatarToOwner[id] = msg.sender;

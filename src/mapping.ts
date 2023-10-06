@@ -9,6 +9,7 @@ export function handleNewGravatar(event: NewGravatar): void {
   gravatar.owner = event.params.owner
   gravatar.displayName = event.params.displayName
   gravatar.imageUrl = event.params.imageUrl
+  //存入数据库
   gravatar.save()
 }
 

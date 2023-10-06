@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@openzeppelin/hardhat-upgrades";
 
 //在配置文件中引用
 require('dotenv').config()
@@ -18,16 +19,7 @@ const config: HardhatUserConfig = {
     hardhat: {
     },
     goerli: {
-      url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_KEY}`,
-      accounts: {
-        mnemonic: MNEMONIC,
-        path: MNEMONIC_PATH,
-        initialIndex: 0,
-        count: 20
-      }
-    },
-    kovan: {
-      url: `https://kovan.infura.io/v3/${INFURA_KEY}`,
+      url: `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_KEY}`,
       accounts: [PRIVATE_KEY]
     }
   },

@@ -1,0 +1,108 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/Gravity.sol:GravatarRegistry": {
+        "src": "contracts\\Gravity.sol:4",
+        "version": {
+          "withMetadata": "d5ca3faf5427cc388d2adf347c6aeece6c1f2c718d0055f9ac03843f5fd6e1c9",
+          "withoutMetadata": "af778ef291793c342c0dbcac5e414432d32e624eb5590c1261dc99cf5eceacb4",
+          "linkedWithoutMetadata": "af778ef291793c342c0dbcac5e414432d32e624eb5590c1261dc99cf5eceacb4"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "createGravatar(string,string)",
+          "getGravatar(address)",
+          "updateGravatarName(string)",
+          "updateGravatarImage(string)",
+          "setMythicalGravatar()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "gravatars",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_struct(Gravatar)28_storage)dyn_storage",
+              "contract": "GravatarRegistry",
+              "src": "contracts\\Gravity.sol:17"
+            },
+            {
+              "label": "gravatarToOwner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_uint256,t_address)",
+              "contract": "GravatarRegistry",
+              "src": "contracts\\Gravity.sol:19"
+            },
+            {
+              "label": "ownerToGravatar",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "GravatarRegistry",
+              "src": "contracts\\Gravity.sol:20"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_struct(Gravatar)28_storage)dyn_storage": {
+              "label": "struct GravatarRegistry.Gravatar[]",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_address)": {
+              "label": "mapping(uint256 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Gravatar)28_storage": {
+              "label": "struct GravatarRegistry.Gravatar",
+              "members": [
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "displayName",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "imageUrl",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.10"
+      }
+    }
+  ]
+}
